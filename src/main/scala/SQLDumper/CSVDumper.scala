@@ -7,7 +7,7 @@ class CSVDumper (fileName:String) extends Dumper{
   
   private val fileWriter:FileWriter = new FileWriter(fileName)
 
-  def write(values:List[Map[String, String]]){
+  def write(values:Seq[Map[String, String]]){
     try{
       val keys = (values(0).keys).toList
       fileWriter.write(keys.mkString(",")+"\n")

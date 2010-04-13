@@ -6,6 +6,6 @@ trait DumperFactory{
 }
 
 trait Dumper{
-  def write(values:List[Map[String, String]]):Unit
+  def write(values:Seq[Map[String, String]]):Unit
   def close():Unit
 }

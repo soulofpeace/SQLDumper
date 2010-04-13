@@ -2,8 +2,8 @@ package SQLDumper
 
 import java.sql.{DriverManager, Connection, SQLException}
 
-class MySQLConnectionFactory extends ConnectionFactory{
-    def apply(serverName:String, portNumber:String, databaseName:String, userName:String, password:String):Connection={
+class MySQLConnectionFactory  (serverName:String, portNumber:String, databaseName:String, userName:String, password:String) extends ConnectionFactory (serverName, portNumber, databaseName, userName, password){
+    def connection:Connection={
       try{
         Class.forName("com.mysql.jdbc.Driver")
         val url ="jdbc:mysql://"+serverName+":"+portNumber+"/"+databaseName
